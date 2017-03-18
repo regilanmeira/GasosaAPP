@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_registrar_abastecimento"
+            android:icon="@drawable/ic_playlist_add_black_24dp"
+            android:title="@string/registrar_abastecimento" />
+         <item
+            android:id="@+id/nav_troca_oleo"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/troca_oleo" />
+
+        <item
+            android:id="@+id/nav_rodizio_pneu"
+            android:icon="@drawable/ic_pneu"
+            android:title="@string/str_rodizio_pneus" />
+        <item
+            android:id="@+id/nav_km_por_litro"
+            android:icon="@drawable/ic_directions_car_black_24dp"
+            android:title="@string/km_por_litro" />
+
+        <item
+            android:id="@+id/nav_custo_trajeto"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="@string/custo_trajeto" />
+        <item
+            android:id="@+id/nav_custo_abastecimento"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="@string/custo_de_abastecimento" />
+
+        <item
+            android:id="@+id/nav_estimativa_autonomia"
+            android:icon="@drawable/ic_swap_calls_black_24dp"
+            android:title="@string/str_autonomia_distancia" />
+        <item
+            android:id="@+id/nav_etanol_gasolina"
+            android:icon="@drawable/ic_local_gas_station_black_24dp"
+            android:title="@string/etanol_gasolina" />
+
+        <item
+            android:id="@+id/nav_sobre_app"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/action_settings" />
+    </group>
+
+
+
+</menu>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout_Padrao"
+    tools:context="br.com.regilan.gasosa.RodizioPneusActivity">
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_ultimo_rodizio" />
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvUltimoRodizio"
+                style="@style/TextView_PadraoListView"
+                android:text="45605" />
+
+            <TextView
+                android:id="@+id/tvkm4"
+                style="@style/TextView_DestaquePequeno"
+                android:text="Km último rodízio" />
+
+            <TextView
+                android:id="@+id/tvProximoRodizio"
+                style="@style/TextView_PadraoListView"
+                android:text="45605" />
+
+            <TextView
+                android:id="@+id/tvkm5"
+                style="@style/TextView_DestaquePequeno"
+                android:text="Km próximo rodizio" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_rodizio_pneus" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_quilometragem_atual" />
+
+    <EditText
+        android:id="@+id/txtKmTrocaPneus"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btRegistrar"
+        style="@style/Botao_Padrao"
+        android:text="@string/str_registrar" />
+
+</LinearLayout>

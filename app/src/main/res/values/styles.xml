@@ -1,0 +1,181 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextView_Titulo" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">#EEEEEE</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+
+    <style name="TextView_DestaqueListView" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">30dp</item>
+
+    </style>
+
+    <style name="TextView_DestaquePequenoListView" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:textSize">8dp</item>
+        <item name="android:gravity">left</item>
+
+    </style>
+
+    <style name="TextView_DestaquePequeno" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:textSize">8dp</item>
+        <item name="android:gravity">left</item>
+
+    </style>
+
+    <style name="TextView_PadraoListView" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="TextView_DataListView" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+
+    <style name="TextView_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+
+    <style name="TextView_DataAbastecimento_List_View" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Botao_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+    </style>
+
+    <style name="EditText_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+    </style>
+
+
+    <style name="TextView_Resultado" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TextView_DestaqueSplash" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TextView_Destaque" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="LinearLayout_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/espacamentoGeral</item>
+
+    </style>
+
+    <style name="CheckBox_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+    </style>
+
+    <style name="ListView_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+
+    <style name="DatePicker_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:layout_margin">@dimen/margem_entre_elementos</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="android:datePickerMode">spinner</item>
+        <item name="android:calendarViewShown">false</item>
+    </style>
+
+    <style name="Space_Padrao" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout_Padrao"
+    tools:context="br.com.regilan.gasosa.EtanolGasolinaActivity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_etanol_gasolina" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_preco_litro_etanol" />
+
+    <EditText
+        android:id="@+id/txtEtanol"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0,00"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_preco_litro_gasolina" />
+
+    <EditText
+        android:id="@+id/txtGasolina"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0,00"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btCalcular"
+        style="@style/Botao_Padrao"
+        android:text="@string/str_calcular" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_mais_vantajoso" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        style="@style/TextView_Resultado"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvTaxa"
+        style="@style/TextView_Destaque"
+        android:text="" />
+
+
+</LinearLayout>

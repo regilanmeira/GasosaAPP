@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.regilan.gasosa.EstimativaAutonomiaActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_autonomia_distancia" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_capacidade_tanque" />
+
+    <EditText
+        android:id="@+id/txtCapacidadeTanque"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0,00"
+        android:inputType="numberDecimal" />
+
+    <CheckBox
+        android:id="@+id/ckGravarCapacidadeTanque"
+        style="@style/CheckBox_Padrao"
+        android:text="@string/str_gravar_capacidade_tanque" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_autonomia" />
+
+    <CheckBox
+        android:id="@+id/ckUsarEstimativaConsumo"
+        style="@style/CheckBox_Padrao"
+        android:text="@string/str_usar_meu_historico_consumo" />
+
+    <EditText
+        android:id="@+id/txtEstimativaConsumo"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0.00"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_tanque_atual" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spPosicaoTanque"
+        >
+
+    </Spinner>
+
+    <Button
+        android:id="@+id/btCalcular"
+        style="@style/Botao_Padrao"
+        android:text="@string/str_calcular" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_autonomia_para" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        style="@style/TextView_Resultado"
+        android:text="0.0 km" />
+
+</LinearLayout>

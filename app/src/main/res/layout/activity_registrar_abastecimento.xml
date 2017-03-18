@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout_Padrao"
+    tools:context="br.com.regilan.gasosa.RegistrarAbastecimentoActivity">
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_registrar_abastecimento" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_quilometragem_atual" />
+
+    <EditText
+        android:id="@+id/txtQuilometragemAtual"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_quantidade_combustivel" />
+
+    <EditText
+        android:id="@+id/txtQuantidadeCombustivel"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberDecimal" />
+
+
+      <TextView
+        android:id="@+id/textView7"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_data_abastecimento" />
+
+    <DatePicker
+        android:id="@+id/txtDataAbastecimento"
+        style="@style/DatePicker_Padrao"
+        />
+
+
+
+    <Button
+        android:id="@+id/btRegistrar"
+        style="@style/Botao_Padrao"
+        android:text="@string/str_registrar" />
+
+</LinearLayout>
+</ScrollView>

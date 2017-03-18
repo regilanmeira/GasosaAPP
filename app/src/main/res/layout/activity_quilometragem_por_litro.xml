@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout_Padrao"
+    tools:context="br.com.regilan.gasosa.QuilometragemPorLitroActivity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextView_Titulo"
+        android:text="@string/str_consumo_por_km" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_km_rodados" />
+
+    <EditText
+        android:id="@+id/txtKmRodados"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TextView_Padrao"
+        android:text="@string/str_litros_abastecidos" />
+
+    <EditText
+        android:id="@+id/txtLitrosAbastecidos"
+        style="@style/EditText_Padrao"
+        android:ems="10"
+        android:hint="0,00"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btCalcular"
+        style="@style/Botao_Padrao"
+        android:text="@string/str_calcular" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TextView_Titulo"
+        android:text="@string/km_por_litro" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        style="@style/TextView_Resultado"
+        android:text="" />
+</LinearLayout>

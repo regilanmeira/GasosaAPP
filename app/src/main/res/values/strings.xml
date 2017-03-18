@@ -1,0 +1,103 @@
+<resources>
+
+    <!-- INICIO INFORMAÇÕES DO APP -->
+    <string name="app_name">Gasosa</string>
+    <string name="app_name_completo">Gasosa - Cálculo de combustível</string>
+    <string name="site_pessoal">www.regilan.com.br</string>
+    <string name="email">regilan@hotmail.com</string>
+
+
+    <!-- FIM INFORMAÇÕES DO APP -->
+
+    <!-- INICIO DOS ITENS DO MENU -->
+    <string name="registrar_abastecimento">Registrar abastecimento</string>
+    <string name="historico_abastecimento">Histórico de abastecimento</string>
+    <string name="troca_oleo">Troca de óleo</string>
+    <string name="km_por_litro">Quilometragem por litro</string>
+    <string name="custo_trajeto">Custo por trajeto</string>
+    <string name="custo_de_abastecimento">Custo de abastecimento</string>
+    <string name="etanol_gasolina">Etanol ou gasolina</string>
+
+    <string name="action_settings">Sobre o app</string>
+    <string name="navigation_drawer_open">Abrir menu de navegação</string>
+    <string name="navigation_drawer_close">Fechar menu de navegação</string>
+
+    <!-- FIM DOS ITENS DO MENU -->
+
+    <!-- INICIO TEXTOS DOS WIDGETS -->
+    <string name="str_etanol_gasolina">Etanol ou Gasolina?</string>
+    <string name="str_preco_litro_etanol">Preço do litro do etanol</string>
+    <string name="str_preco_litro_gasolina">Preço do litro da gasolina</string>
+    <string name="str_calcular">Calcular</string>
+    <string name="str_registrar">Registrar</string>
+    <string name="str_mais_vantajoso">Mais vantajoso</string>
+    <string name="str_custo_abastecimento">Custo de abastecimento em litros</string>
+    <string name="str_valor_abastecer">Valor a abastecer (R$)</string>
+    <string name="str_preco_combustivel">Preço do combustível (R$)</string>
+    <string name="str_quantidade_combustivel">Quantidade de combustível</string>
+    <string name="str_custo_trajeto">Custo por trajeto</string>
+    <string name="str_autonomia">Estimativa de consumo do automóvel (km/l)</string>
+    <string name="str_distancia_trajeto">Distância do trajeto (km)</string>
+    <string name="str_custo_trajeto_reais">Custo deste trajeto</string>
+    <string name="str_usar_meu_historico_consumo">Usar estimativa de consumo?</string>
+
+    <string name="str_consumo_por_km">Consumo por quilometragem</string>
+    <string name="str_km_rodados">Kms rodados</string>
+    <string name="str_litros_abastecidos">Litros abastecidos</string>
+
+    <string name="str_historico_abastecimento">Histórico de abastecimentos</string>
+
+    <string name="str_km_troca_oleo">Quilometragem atual</string>
+    <string name="str_data_troca">Data da troca</string>
+    <string name="str_km_proxima_troca_oleo">Quilometragem da próxima troca</string>
+    <string name="str_data_proxima_troca">Data da próxima troca</string>
+    <string name="str_ultima_troca">Última troca</string>
+    <string name="str_proxima_troca">Próxima troca</string>
+
+    <string name="str_registrar_abastecimento">Registrar abastecimento</string>
+    <string name="str_quilometragem_atual">Quilometragem atual</string>
+    <string name="str_data_abastecimento">Data do abastecimento</string>
+
+    <string name="str_rodizio_pneus">Rodízio de pneus</string>
+    <string name="str_ultimo_rodizio">Último rodízio de pneus</string>
+
+    <string name="str_autonomia_distancia">Estimativa de Autonomia</string>
+    <string name="str_capacidade_tanque">Capacidade do tanque (litros)</string>
+    <string name="str_tanque_atual">Posição atual do tanque</string>
+    <string name="str_gravar_capacidade_tanque">Gravar capacidade do tanque</string>
+    <string name="str_autonomia_para">Autonomia para</string>
+
+
+    <!-- FIM TEXTVIEW e EDITTEXT -->
+
+    <!-- INICIO TEXTO DE MENSAGENS -->
+    <string name="msg_sem_resultado">Não foi possível verificar o resultado. Verifique se foram informados valores
+    válidos.</string>
+    <string name="msg_litros"> Litros</string>
+    <string name="title_activity_about">Sobre o aplicativo</string>
+    <string name="large_text">
+        "Gasosa - Cálculo de combustível.\n\n"
+        "Este aplicativo tem o objetivo de auxiliar o motorista no cálculo de consumo de um veículo. \n\n"
+        "Apresenta funções para: \n\n"
+        "- Registro e histórico de abastecimento;\n"
+        "- Registro de troca de óleo de motor;\n"
+        "- Registro de rodízio de pneus;\n"
+        "- Custo por trajeto e de abastecimento;\n"
+        "- Cálculo de quilometragem por litro;\n"
+        "- Relação Etanol X Gasolina;\n"
+        "- Cálculo de quilometragem por litro;\n"
+        "- Estimativa de autonomia\n"
+        "- * Estimativa de consumo \n"
+        "- ** Aviso sobre troca de óleo de motor e rodízio de pneus \n\n"
+
+        "* A estimativa de consumo é calculada a partir da relação entre diferença de KM nos dois últimos abastecimentos e a quantidade e litros de combustível abastecido.\n\n"
+        "** O Aviso sobre a troca de óleo de motor é baseado na data da próxima troca de óleo e quilometragem do veículo. O Aviso sobre o rodízio de pneus é baseado na quilometragem do veículo. Para que estes avisos sejam emitidosfaz-se necessário registrar os abastecimentos do veículo com suas respectivas quilometragem.\n\n"
+
+        "Se você gostou do APP comente e avalie no Google Play.\n\n"
+
+        "Conheça mais sobre meu trabalho no site:\n http://www.regilan.com.br \n\n"
+
+    </string>
+
+    <!-- FIM TEXTO DE MENSAGENS -->
+</resources>
