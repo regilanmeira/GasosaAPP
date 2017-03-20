@@ -5,6 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -35,6 +37,7 @@ public class VerificarDataTrocaOleoReceiver extends BroadcastReceiver {
             ano = settings.getString("ano", "0");
 
 
+
             Calendar dataAtual = Calendar.getInstance();
             diaAtual = dataAtual.get(Calendar.DAY_OF_MONTH);
             mesAtual = dataAtual.get(Calendar.MONTH);
@@ -47,19 +50,45 @@ public class VerificarDataTrocaOleoReceiver extends BroadcastReceiver {
             String dataAtualTexto = "",dataTrocaTexto= "";
 
             dataTrocaTexto = ano + mes + dia;
-            dataAtualTexto = String.valueOf(anoAtual) + String.valueOf(mesAtual) + String.valueOf(diaAtual);
+
+
+            if (diaAtual < 10){
+
+                if (mesAtual < 10)
+                {
+                    dataAtualTexto = String.valueOf(anoAtual) + "0" + String.valueOf(mesAtual) + "0" + String.valueOf(diaAtual);
+                }
+                else
+                {
+                    dataAtualTexto = String.valueOf(anoAtual) + String.valueOf(mesAtual) + "0" + String.valueOf(diaAtual);
+                }
+            }
+            else
+            {
+                if (mesAtual < 10)
+                {
+                    dataAtualTexto = String.valueOf(anoAtual) + "0" + String.valueOf(mesAtual) + String.valueOf(diaAtual);
+                }
+                else
+                {
+                    dataAtualTexto = String.valueOf(anoAtual) + String.valueOf(mesAtual) + String.valueOf(diaAtual);
+                }
+            }
 
 
             dtTroca = Integer.parseInt(dataTrocaTexto);
             dtAtual = Integer.parseInt(dataAtualTexto);
 
-            if (dtAtual >= dtTroca)
+
+            if ((dtAtual != 0) && (dtTroca != 0))
             {
-                MensagemNotificacao m = new MensagemNotificacao(context, janela);
 
-                m.exibirMensagem("Gasosa Informa", "Você tem uma data de troca de óleo programada para este dia");
+                if (dtAtual >= dtTroca) {
+                    MensagemNotificacao m = new MensagemNotificacao(context, janela);
+
+                    m.exibirMensagem("Gasosa Informa", "Você tem uma data de troca de óleo vencida");
+                }
             }
-
         }
         catch (Exception ex)
         {

@@ -128,15 +128,21 @@ public class RegistrarAbastecimentoActivity extends AppCompatActivity {
 
         kmRodizio = Double.parseDouble(kmRodizioShared);
 
-        if (km >= kmRodizio)
+        if (kmRodizio > 0)
         {
-            Intent janela = new Intent(RegistrarAbastecimentoActivity.this,RodizioPneusActivity.class);
 
-            MensagemNotificacao m = new MensagemNotificacao(getBaseContext(),janela);
+            if (km >= kmRodizio)
+            {
+                Intent janela = new Intent(RegistrarAbastecimentoActivity.this,RodizioPneusActivity.class);
 
-            m.exibirMensagem("Gasosa Informa", "Você tem um rodízio de pneus programado para a quilometragem atual");
+                MensagemNotificacao m = new MensagemNotificacao(getBaseContext(),janela);
 
+                m.exibirMensagem("Gasosa Informa", "Você tem um rodízio de pneus programado para a quilometragem atual");
+
+            }
         }
+
+
 
     }
 
@@ -145,21 +151,26 @@ public class RegistrarAbastecimentoActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences("TrocaOleo", 0);
 
         String kmTrocaOleooShared;
-        double kmTrocaOleoo;
+        double kmTrocaOleo;
 
 
         kmTrocaOleooShared = settings.getString("kmProximaTroca","0");
 
-        kmTrocaOleoo = Double.parseDouble(kmTrocaOleooShared);
+        kmTrocaOleo = Double.parseDouble(kmTrocaOleooShared);
 
-        if (km >= kmTrocaOleoo)
+
+        if (kmTrocaOleo > 0)
         {
-            Intent janela = new Intent(RegistrarAbastecimentoActivity.this,RodizioPneusActivity.class);
+            if (km >= kmTrocaOleo)
+            {
+                Intent janela = new Intent(RegistrarAbastecimentoActivity.this,TrocaOleoActivity.class);
 
-            MensagemNotificacao m = new MensagemNotificacao(getBaseContext(),janela);
+                MensagemNotificacao m = new MensagemNotificacao(getBaseContext(),janela);
 
-            m.exibirMensagem("Gasosa Informa", "Você tem uma troca de óleo programado para a quilometragem atual.");
+                m.exibirMensagem("Gasosa Informa", "Você tem uma troca de óleo programado para a quilometragem atual.");
 
+            }
         }
+
     }
 }

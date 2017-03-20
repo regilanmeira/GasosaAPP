@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -118,6 +119,7 @@ public class TrocaOleoActivity extends AppCompatActivity {
             dataProximaTroca.append(String.valueOf(txtDataProximaTrocaOleo.getDayOfMonth()));
             dataProximaTroca.append(" de ");
 
+
             int dia = txtDataProximaTrocaOleo.getDayOfMonth();
             int mesProximaTroca = txtDataProximaTrocaOleo.getMonth() + 1;
             int ano = txtDataProximaTrocaOleo.getYear();
@@ -167,6 +169,10 @@ public class TrocaOleoActivity extends AppCompatActivity {
             dataProximaTroca.append(String.valueOf(txtDataProximaTrocaOleo.getYear()));
 
 
+
+
+
+
             //Gravar no SharedPreferencer - Chave/Valor
             SharedPreferences settings = getSharedPreferences("TrocaOleo", 0);
             SharedPreferences.Editor editor = settings.edit();
@@ -174,9 +180,31 @@ public class TrocaOleoActivity extends AppCompatActivity {
             editor.putString("kmUltimaTroca", txtKmTrocaOleo.getText().toString());
             editor.putString("dataProximaTroca", dataProximaTroca.toString());
             editor.putString("kmProximaTroca", txtKmProximaTroca.getText().toString());
-            editor.putString("dia",String.valueOf(dia));
-            editor.putString("mes",String.valueOf(mes));
+
+            if (dia < 10)
+            {
+
+                editor.putString("dia","0" + String.valueOf(dia));
+            }
+            else
+            {
+
+                editor.putString("dia",String.valueOf(dia));
+            }
+
+            if (mesProximaTroca < 10)
+            {
+                editor.putString("mes","0" + String.valueOf(mesProximaTroca));
+            }
+            else
+            {
+                editor.putString("mes",String.valueOf(mesProximaTroca));
+            }
+
+
             editor.putString("ano",String.valueOf(ano));
+
+
 
 
 
@@ -199,13 +227,13 @@ public class TrocaOleoActivity extends AppCompatActivity {
     {
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(System.currentTimeMillis());
-        c.add(Calendar.SECOND,5);
+        c.add(Calendar.SECOND,30);
 
         long tempo= c.getTimeInMillis();
 
         Intent receptor = new Intent(VerificarDataTrocaOleoReceiver.NOME_ACAO);
 
-        Alarme.agendarComRepeticao(getBaseContext(),receptor,tempo,86400 * 1000);
+        Alarme.agendarComRepeticao(getBaseContext(),receptor,tempo,3600 * 1000);
     }
     public void lerTrocaOleo()
     {
