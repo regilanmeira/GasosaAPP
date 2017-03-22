@@ -20,10 +20,10 @@ public class QuilometragemPorLitroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quilometragem_por_litro);
 
-        txtKmRodados = (EditText)findViewById(R.id.txtKmRodados);
-        txtLitrosAbastecidos = (EditText)findViewById(R.id.txtLitrosAbastecidos);
-        tvResultado = (TextView)findViewById(R.id.tvResultado);
-        btCalcular = (Button)findViewById(R.id.btCalcular);
+        txtKmRodados = (EditText) findViewById(R.id.txtKmRodados);
+        txtLitrosAbastecidos = (EditText) findViewById(R.id.txtLitrosAbastecidos);
+        tvResultado = (TextView) findViewById(R.id.tvResultado);
+        btCalcular = (Button) findViewById(R.id.btCalcular);
 
         btCalcular.setOnClickListener(calcular);
 
@@ -33,29 +33,33 @@ public class QuilometragemPorLitroActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            try
-            {
-                double kmrodados,litros,kmporlitro;
+            try {
+                double kmrodados, litros, kmporlitro;
 
-                kmrodados = Double.parseDouble(txtKmRodados.getText().toString());
-                litros = Double.parseDouble(txtLitrosAbastecidos.getText().toString());
-
-                Abastecimento abastecimento = new Abastecimento();
-                abastecimento.setKm_rodados(kmrodados);
-                abastecimento.setLitros_abastecidos(litros);
+                if (txtKmRodados.getText().toString().equals("") || txtLitrosAbastecidos.getText().toString().equals("")) {
 
 
-                kmporlitro = abastecimento.CalcularQuilometragemPorLitro();
+                    Toast.makeText(getBaseContext(), R.string.msg_preencha_campos, Toast.LENGTH_LONG).show();
 
-                DecimalFormat formatacao = new DecimalFormat("#0.00");
+                } else {
+                    kmrodados = Double.parseDouble(txtKmRodados.getText().toString());
+                    litros = Double.parseDouble(txtLitrosAbastecidos.getText().toString());
 
-                tvResultado.setText(formatacao.format(kmporlitro) + " Km/l");
+                    Abastecimento abastecimento = new Abastecimento();
+                    abastecimento.setKm_rodados(kmrodados);
+                    abastecimento.setLitros_abastecidos(litros);
+
+
+                    kmporlitro = abastecimento.CalcularQuilometragemPorLitro();
+
+                    DecimalFormat formatacao = new DecimalFormat("#0.00");
+
+                    tvResultado.setText(formatacao.format(kmporlitro) + " Km/l");
+                }
+
+            } catch (Exception ex) {
+                Toast.makeText(getBaseContext(), R.string.msg_sem_resultado, Toast.LENGTH_LONG).show();
             }
-            catch (Exception ex)
-            {
-                Toast.makeText(getBaseContext(),R.string.msg_sem_resultado,Toast.LENGTH_LONG).show();
-            }
-
 
 
         }

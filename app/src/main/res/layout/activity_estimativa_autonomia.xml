@@ -28,6 +28,7 @@
         style="@style/EditText_Padrao"
         android:ems="10"
         android:hint="0,00"
+        android:maxLength="10"
         android:inputType="numberDecimal" />
 
     <CheckBox
@@ -50,6 +51,7 @@
         style="@style/EditText_Padrao"
         android:ems="10"
         android:hint="0.00"
+        android:maxLength="10"
         android:inputType="numberDecimal" />
 
     <TextView

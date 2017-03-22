@@ -36,20 +36,32 @@ public class CustoAbastecimentoActivity extends AppCompatActivity {
             double valor,preco,quantidade;
 
 
+
+
             try
             {
-                valor = Double.parseDouble(txtValorAbastecer.getText().toString());
-                preco = Double.parseDouble(txtPrecoCombustivel.getText().toString());
 
-                Abastecimento abastecimento = new Abastecimento();
-                abastecimento.setValor_abastecer(valor);
-                abastecimento.setPreco_combustivel(preco);
+                if (txtPrecoCombustivel.getText().toString().equals("") || txtValorAbastecer.getText().toString().equals(""))
+                {
+                    Toast.makeText(getBaseContext(),R.string.msg_preencha_campos,Toast.LENGTH_LONG).show();
 
-                quantidade = abastecimento.CalcularQuantidadeCustoAbastecimento();
+                }
+                else
+                {
+                    valor = Double.parseDouble(txtValorAbastecer.getText().toString());
+                    preco = Double.parseDouble(txtPrecoCombustivel.getText().toString());
 
-                DecimalFormat formatacao = new DecimalFormat("0.##");
+                    Abastecimento abastecimento = new Abastecimento();
+                    abastecimento.setValor_abastecer(valor);
+                    abastecimento.setPreco_combustivel(preco);
 
-                tvResultado.setText(formatacao.format(quantidade) + " litros");
+                    quantidade = abastecimento.CalcularQuantidadeCustoAbastecimento();
+
+                    DecimalFormat formatacao = new DecimalFormat("0.##");
+
+                    tvResultado.setText(formatacao.format(quantidade) + " litros");
+                }
+
             }
             catch (Exception ex)
             {

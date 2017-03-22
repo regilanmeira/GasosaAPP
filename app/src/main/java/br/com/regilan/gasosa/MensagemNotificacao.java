@@ -32,12 +32,8 @@ public class MensagemNotificacao {
     }
 
 
-
     public void exibirMensagem(String titulo, String texto)
     {
-
-
-
 
         NotificationManager gerenciadorMensagens = (NotificationManager) contexto.getSystemService(Context.NOTIFICATION_SERVICE);
 

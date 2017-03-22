@@ -44,8 +44,6 @@ public class VerificarDataTrocaOleoReceiver extends BroadcastReceiver {
             mesAtual += 1;
             anoAtual = dataAtual.get(Calendar.YEAR);
 
-
-
             int dtAtual = 0,dtTroca=0;
             String dataAtualTexto = "",dataTrocaTexto= "";
 

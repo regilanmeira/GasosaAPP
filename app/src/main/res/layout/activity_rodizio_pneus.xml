@@ -63,7 +63,8 @@
         style="@style/EditText_Padrao"
         android:ems="10"
         android:hint="0"
-        android:inputType="number" />
+        android:inputType="number"
+        android:maxLength="10"/>
 
     <Button
         android:id="@+id/btRegistrar"

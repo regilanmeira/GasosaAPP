@@ -2,6 +2,7 @@ package br.com.regilan.gasosa;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -66,6 +67,32 @@ public class MainActivity extends AppCompatActivity
         carregarListaAbastecimentos();
 
         calcularEstimativaAbastecimento();
+
+        //ALARME - CASO NÃO TENHA ALARME GRAVADO SERÁ GERADO UM ALARME
+        try
+        {
+            SharedPreferences settings = getSharedPreferences("Geral",0);
+
+            boolean alarme;
+
+            alarme = settings.getBoolean("EmitirAlarme",false);
+
+
+            Log.d("Emitir alarme", String.valueOf(alarme));
+
+            if (alarme == false)
+            {
+                gerarAlarmeTrocaOleo();
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean("EmitirAlarme",true);
+                editor.commit();
+
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.d("Exceção",ex.getMessage());
+        }
 
     }
 
@@ -201,7 +228,7 @@ public class MainActivity extends AppCompatActivity
 
             lvHistoricoAbastecimento.setAdapter(adaptador);
         } catch (Exception ex) {
-            Toast.makeText(getBaseContext(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getBaseContext(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -253,6 +280,19 @@ public class MainActivity extends AppCompatActivity
         alerta = builder.create();
         //Exibe
         alerta.show();
+    }
+
+
+    public void gerarAlarmeTrocaOleo() {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(System.currentTimeMillis());
+        c.add(Calendar.SECOND, 60);
+
+        long tempo = c.getTimeInMillis();
+
+        Intent receptor = new Intent(VerificarDataTrocaOleoReceiver.NOME_ACAO);
+
+        Alarme.agendarComRepeticao(getBaseContext(), receptor, tempo, 3600 * 1000);
     }
 }
 

@@ -22,7 +22,11 @@
     <TextView
         style="@style/TextView_Titulo"
         android:text="@string/str_historico_abastecimento" />
+    <TextView
 
+        style="@style/TextView_DataListView"
+
+        android:text="Pressione sobre um item para removê-lo." />
     <ListView
         android:id="@+id/lvHistoricoAbastecimento"
         style="@style/ListView_Padrao"/>

@@ -73,6 +73,8 @@
     <!-- INICIO TEXTO DE MENSAGENS -->
     <string name="msg_sem_resultado">Não foi possível verificar o resultado. Verifique se foram informados valores
     válidos.</string>
+    <string name="msg_preencha_campos">Existem campos sem preenchimento de valores</string>
+
     <string name="msg_litros"> Litros</string>
     <string name="title_activity_about">Sobre o aplicativo</string>
     <string name="large_text">
@@ -86,9 +88,9 @@
         "- Cálculo de quilometragem por litro;\n"
         "- Relação Etanol X Gasolina;\n"
         "- Cálculo de quilometragem por litro;\n"
-        "- Estimativa de autonomia\n"
-        "- * Estimativa de consumo \n"
-        "- ** Aviso sobre troca de óleo de motor e rodízio de pneus \n\n"
+        "- Estimativa de autonomia;\n"
+        "- * Estimativa de consumo; \n"
+        "- ** Aviso sobre troca de óleo de motor e rodízio de pneus. \n\n"
 
         "* A estimativa de consumo é calculada a partir da relação entre diferença de KM nos dois últimos abastecimentos e a quantidade e litros de combustível abastecido.\n\n"
         "** O Aviso sobre a troca de óleo de motor é baseado na data da próxima troca de óleo e quilometragem do veículo. O Aviso sobre o rodízio de pneus é baseado na quilometragem do veículo. Para que estes avisos sejam emitidosfaz-se necessário registrar os abastecimentos do veículo com suas respectivas quilometragem.\n\n"

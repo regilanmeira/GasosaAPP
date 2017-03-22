@@ -15,6 +15,7 @@ public class RegistrarAbastecimentoActivity extends AppCompatActivity {
     DatePicker txtDataAbastecimento;
     Button btRegistrar;
     double quantidade, quilometragem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,82 +34,88 @@ public class RegistrarAbastecimentoActivity extends AppCompatActivity {
         public void onClick(View v) {
 
 
-
             try {
-                quantidade = Double.parseDouble(txtQuantidadeCombustivel.getText().toString());
-                quilometragem = Double.parseDouble(txtQuilometragemAtual.getText().toString());
 
-                StringBuilder dataabastecimento = new StringBuilder();
-                dataabastecimento.append(String.valueOf(txtDataAbastecimento.getDayOfMonth()));
-                dataabastecimento.append(" de ");
+                if (txtQuantidadeCombustivel.getText().toString().equals("") || txtQuilometragemAtual.getText().toString().equals("")) {
+
+                    Toast.makeText(getBaseContext(), R.string.msg_preencha_campos, Toast.LENGTH_LONG).show();
 
 
-                int mes = txtDataAbastecimento.getMonth() + 1;
-
-                switch (mes) {
-                    case 1:
-                        dataabastecimento.append("jan");
-                        break;
-                    case 2:
-                        dataabastecimento.append("fev");
-                        break;
-                    case 3:
-                        dataabastecimento.append("mar");
-                        break;
-                    case 4:
-                        dataabastecimento.append("abr");
-                        break;
-                    case 5:
-                        dataabastecimento.append("mai");
-                        break;
-                    case 6:
-                        dataabastecimento.append("jun");
-                        break;
-                    case 7:
-                        dataabastecimento.append("jul");
-                        break;
-                    case 8:
-                        dataabastecimento.append("ago");
-                        break;
-                    case 9:
-                        dataabastecimento.append("set");
-                        break;
-                    case 10:
-                        dataabastecimento.append("out");
-                        break;
-                    case 11:
-                        dataabastecimento.append("nov");
-                        break;
-                    case 12:
-                        dataabastecimento.append("dez");
-                        break;
-                    default:
-                        dataabastecimento.append("");
-                        break;
-                }
-
-
-                Abastecimento abastecimento = new Abastecimento(quilometragem, quantidade, dataabastecimento.toString());
-
-                if (abastecimento.registrarAbastecimento(getBaseContext()) == true) {
-                    Toast.makeText(getBaseContext(), "Abastecimento registrado!", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getBaseContext(), "Erro no registro do abastecimento!", Toast.LENGTH_LONG).show();
-                }
+                    quantidade = Double.parseDouble(txtQuantidadeCombustivel.getText().toString());
+
+                    quilometragem = Double.parseDouble(txtQuilometragemAtual.getText().toString());
+
+                    StringBuilder dataabastecimento = new StringBuilder();
+                    dataabastecimento.append(String.valueOf(txtDataAbastecimento.getDayOfMonth()));
+                    dataabastecimento.append(" de ");
 
 
-                try
-                {
-                    verificarRodizioPneus(quilometragem);
-                    verificarTrocaOleo(quilometragem);
-                }
-                catch (Exception ex)
-                {
+                    int mes = txtDataAbastecimento.getMonth() + 1;
 
+                    switch (mes) {
+                        case 1:
+                            dataabastecimento.append("jan");
+                            break;
+                        case 2:
+                            dataabastecimento.append("fev");
+                            break;
+                        case 3:
+                            dataabastecimento.append("mar");
+                            break;
+                        case 4:
+                            dataabastecimento.append("abr");
+                            break;
+                        case 5:
+                            dataabastecimento.append("mai");
+                            break;
+                        case 6:
+                            dataabastecimento.append("jun");
+                            break;
+                        case 7:
+                            dataabastecimento.append("jul");
+                            break;
+                        case 8:
+                            dataabastecimento.append("ago");
+                            break;
+                        case 9:
+                            dataabastecimento.append("set");
+                            break;
+                        case 10:
+                            dataabastecimento.append("out");
+                            break;
+                        case 11:
+                            dataabastecimento.append("nov");
+                            break;
+                        case 12:
+                            dataabastecimento.append("dez");
+                            break;
+                        default:
+                            dataabastecimento.append("");
+                            break;
+                    }
+
+
+                    Abastecimento abastecimento = new Abastecimento(quilometragem, quantidade, dataabastecimento.toString());
+
+                    if (abastecimento.registrarAbastecimento(getBaseContext()) == true) {
+                        Toast.makeText(getBaseContext(), "Abastecimento registrado!", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getBaseContext(), "Erro no registro do abastecimento!", Toast.LENGTH_LONG).show();
+                    }
+
+
+                    try {
+                        verificarRodizioPneus(quilometragem);
+                        verificarTrocaOleo(quilometragem);
+                    } catch (Exception ex) {
+
+                    }
                 }
+
 
             } catch (Exception ex) {
-                Toast.makeText(getBaseContext(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Erro no registro do abastecimento", Toast.LENGTH_LONG).show();
             }
 
 
@@ -116,61 +123,65 @@ public class RegistrarAbastecimentoActivity extends AppCompatActivity {
     };
 
 
-    public void verificarRodizioPneus(double km)
-    {
-        SharedPreferences settings = getSharedPreferences("TrocaPneus", 0);
+    public void verificarRodizioPneus(double km) {
+        try {
+            SharedPreferences settings = getSharedPreferences("TrocaPneus", 0);
 
-        String kmRodizioShared;
-        double kmRodizio;
+            String kmRodizioShared;
+            double kmRodizio;
 
 
-        kmRodizioShared = settings.getString("kmProximaTroca","0");
+            kmRodizioShared = settings.getString("kmProximaTroca", "0");
 
-        kmRodizio = Double.parseDouble(kmRodizioShared);
+            kmRodizio = Double.parseDouble(kmRodizioShared);
 
-        if (kmRodizio > 0)
-        {
+            if (kmRodizio > 0) {
 
-            if (km >= kmRodizio)
-            {
-                Intent janela = new Intent(RegistrarAbastecimentoActivity.this,RodizioPneusActivity.class);
+                if (km >= kmRodizio) {
+                    Intent janela = new Intent(RegistrarAbastecimentoActivity.this, RodizioPneusActivity.class);
 
-                MensagemNotificacao m = new MensagemNotificacao(getBaseContext(),janela);
+                    MensagemNotificacao m = new MensagemNotificacao(getBaseContext(), janela);
 
-                m.exibirMensagem("Gasosa Informa", "Você tem um rodízio de pneus programado para a quilometragem atual");
+                    m.exibirMensagem("Gasosa Informa", "Você tem um rodízio de pneus programado para a quilometragem atual");
 
+                }
             }
-        }
 
+        } catch (Exception ex) {
+
+        }
 
 
     }
 
-    public void verificarTrocaOleo(double km)
-    {
-        SharedPreferences settings = getSharedPreferences("TrocaOleo", 0);
+    public void verificarTrocaOleo(double km) {
 
-        String kmTrocaOleooShared;
-        double kmTrocaOleo;
+        try {
+            SharedPreferences settings = getSharedPreferences("TrocaOleo", 0);
 
-
-        kmTrocaOleooShared = settings.getString("kmProximaTroca","0");
-
-        kmTrocaOleo = Double.parseDouble(kmTrocaOleooShared);
+            String kmTrocaOleooShared;
+            double kmTrocaOleo;
 
 
-        if (kmTrocaOleo > 0)
-        {
-            if (km >= kmTrocaOleo)
-            {
-                Intent janela = new Intent(RegistrarAbastecimentoActivity.this,TrocaOleoActivity.class);
+            kmTrocaOleooShared = settings.getString("kmProximaTroca", "0");
 
-                MensagemNotificacao m = new MensagemNotificacao(getBaseContext(),janela);
+            kmTrocaOleo = Double.parseDouble(kmTrocaOleooShared);
 
-                m.exibirMensagem("Gasosa Informa", "Você tem uma troca de óleo programado para a quilometragem atual.");
 
+            if (kmTrocaOleo > 0) {
+                if (km >= kmTrocaOleo) {
+                    Intent janela = new Intent(RegistrarAbastecimentoActivity.this, TrocaOleoActivity.class);
+
+                    MensagemNotificacao m = new MensagemNotificacao(getBaseContext(), janela);
+
+                    m.exibirMensagem("Gasosa Informa", "Você tem uma troca de óleo programado para a quilometragem atual.");
+
+                }
             }
+        } catch (Exception ex) {
+
         }
+
 
     }
 }

@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -69,49 +70,56 @@ public class EstimativaAutonomiaActivity extends AppCompatActivity {
 
                 double capacidadeTanque = 0, tanqueAtual = 0, estimativaConsumo = 0;
 
-                capacidadeTanque = Double.parseDouble(txtCapacidadeTanque.getText().toString());
-                estimativaConsumo = Double.parseDouble(txtEstimativaConsumo.getText().toString());
+                if (txtCapacidadeTanque.getText().toString().equals("") || txtEstimativaConsumo.getText().toString().equals("")) {
 
-                switch (spPosicaoTanque.getSelectedItem().toString())
-                {
-                    case "1/8":
-                        tanqueAtual = 1.0 / 8.0;
-                        break;
-                    case "2/8":
-                        tanqueAtual = 2.0 / 8.0;
-                        break;
-                    case "3/8":
-                        tanqueAtual = 3.0 / 8.0;
-                        break;
-                    case "4/8":
-                        tanqueAtual = 4.0 / 8.0;
-                        break;
-                    case "5/8":
-                        tanqueAtual = 5.0 / 8.0;
-                        break;
-                    case "6/8":
-                        tanqueAtual = 6.0 / 8.0;
-                        break;
-                    case "7/8":
-                        tanqueAtual = 7.0 / 8.0;
-                        break;
-                    case "8/8":
-                        tanqueAtual = 1;
-                        break;
-                    default:
-                        tanqueAtual = 0;
-                        break;
+                    Toast.makeText(getBaseContext(),R.string.msg_preencha_campos,Toast.LENGTH_LONG).show();
+
 
                 }
+                else
+                {
+                    capacidadeTanque = Double.parseDouble(txtCapacidadeTanque.getText().toString());
+                    estimativaConsumo = Double.parseDouble(txtEstimativaConsumo.getText().toString());
+
+                    switch (spPosicaoTanque.getSelectedItem().toString()) {
+                        case "1/8":
+                            tanqueAtual = 1.0 / 8.0;
+                            break;
+                        case "2/8":
+                            tanqueAtual = 2.0 / 8.0;
+                            break;
+                        case "3/8":
+                            tanqueAtual = 3.0 / 8.0;
+                            break;
+                        case "4/8":
+                            tanqueAtual = 4.0 / 8.0;
+                            break;
+                        case "5/8":
+                            tanqueAtual = 5.0 / 8.0;
+                            break;
+                        case "6/8":
+                            tanqueAtual = 6.0 / 8.0;
+                            break;
+                        case "7/8":
+                            tanqueAtual = 7.0 / 8.0;
+                            break;
+                        case "8/8":
+                            tanqueAtual = 1;
+                            break;
+                        default:
+                            tanqueAtual = 0;
+                            break;
+
+                    }
 
 
+                    Abastecimento abastecimento = new Abastecimento();
+                    estimativaKm = abastecimento.calcularEstimativaConsumo(capacidadeTanque, tanqueAtual, estimativaConsumo);
 
-                Abastecimento abastecimento = new Abastecimento();
-                estimativaKm = abastecimento.calcularEstimativaConsumo(capacidadeTanque,tanqueAtual,estimativaConsumo);
+                    DecimalFormat formatacao = new DecimalFormat("#0.00");
 
-                DecimalFormat formatacao = new DecimalFormat("#0.00");
-
-                tvResultado.setText(formatacao.format(estimativaKm) + " km");
+                    tvResultado.setText(formatacao.format(estimativaKm) + " km");
+                }
 
 
             }

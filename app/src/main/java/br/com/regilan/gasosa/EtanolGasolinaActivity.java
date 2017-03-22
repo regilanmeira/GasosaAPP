@@ -43,23 +43,34 @@ Button btCalcular;
 
             try
             {
-                etanol = Double.parseDouble(txtEtanol.getText().toString());
-                gasolina = Double.parseDouble(txtGasolina.getText().toString());
+                if(txtEtanol.getText().toString().equals("") || txtGasolina.getText().toString().equals(""))
+                {
 
-                Abastecimento abastecimento = new Abastecimento();
-                abastecimento.setEtanol(etanol);
-                abastecimento.setGasolina(gasolina);
-
-                opcao = abastecimento.CompararEtanolGasolina();
+                    Toast.makeText(getBaseContext(),R.string.msg_preencha_campos,Toast.LENGTH_LONG).show();
 
 
-                DecimalFormat formatacao = new DecimalFormat("#0.00");
+                }
+                 else
+                {
+                    etanol = Double.parseDouble(txtEtanol.getText().toString());
+                    gasolina = Double.parseDouble(txtGasolina.getText().toString());
+
+                    Abastecimento abastecimento = new Abastecimento();
+                    abastecimento.setEtanol(etanol);
+                    abastecimento.setGasolina(gasolina);
+
+                    opcao = abastecimento.CompararEtanolGasolina();
+
+
+                    DecimalFormat formatacao = new DecimalFormat("#0.00");
 
 
                     tvResultado.setText(opcao);
 
 
-                tvTaxa.setText("Taxa de " + formatacao.format(abastecimento.getTaxa_etanol_gasolina()) + " % ");
+                    tvTaxa.setText("Taxa de " + formatacao.format(abastecimento.getTaxa_etanol_gasolina()) + " % ");
+                }
+
             }
             catch (Exception ex)
             {

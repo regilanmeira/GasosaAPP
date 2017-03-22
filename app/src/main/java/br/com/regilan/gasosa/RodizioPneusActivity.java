@@ -44,23 +44,34 @@ public class RodizioPneusActivity extends AppCompatActivity {
 
            int proximaTroca;
 
-            proximaTroca = Integer.parseInt(txtKmTrocaPneus.getText().toString());
-            proximaTroca += 10000;
+            if (txtKmTrocaPneus.getText().toString().equals(""))
+            {
 
-            //Gravar no SharedPreferencer - Chave/Valor
-            SharedPreferences settings = getSharedPreferences("TrocaPneus", 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putString("kmUltimaTroca", txtKmTrocaPneus.getText().toString());
-            editor.putString("kmProximaTroca", String.valueOf(proximaTroca));
+                Toast.makeText(getBaseContext(), R.string.msg_preencha_campos, Toast.LENGTH_LONG).show();
 
-            //Confirma a gravação dos dados
-            editor.commit();
 
-            Toast.makeText(getBaseContext(), "Registro gravado", Toast.LENGTH_LONG).show();
+
+            }
+            else {
+                proximaTroca = Integer.parseInt(txtKmTrocaPneus.getText().toString());
+                proximaTroca += 10000;
+
+                //Gravar no SharedPreferencer - Chave/Valor
+                SharedPreferences settings = getSharedPreferences("TrocaPneus", 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("kmUltimaTroca", txtKmTrocaPneus.getText().toString());
+                editor.putString("kmProximaTroca", String.valueOf(proximaTroca));
+
+                //Confirma a gravação dos dados
+                editor.commit();
+
+                Toast.makeText(getBaseContext(), "Rodízio de pneus registrado", Toast.LENGTH_LONG).show();
+            }
+
         }
         catch (Exception ex)
         {
-            Toast.makeText(getBaseContext(), "Erro na gravação", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Erro no registro do rodízio de pneus", Toast.LENGTH_LONG).show();
         }
 
 

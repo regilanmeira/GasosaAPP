@@ -21,6 +21,7 @@
     <TextView
         android:id="@+id/textView3"
         style="@style/TextView_Padrao"
+
         android:text="@string/str_valor_abastecer" />
 
     <EditText
@@ -28,6 +29,7 @@
         style="@style/EditText_Padrao"
         android:ems="10"
         android:hint="0,00"
+        android:maxLength="10"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -40,6 +42,7 @@
         style="@style/EditText_Padrao"
         android:ems="10"
         android:hint="0,00"
+        android:maxLength="10"
         android:inputType="numberDecimal" />
 
     <Button

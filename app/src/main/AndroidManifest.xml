@@ -11,16 +11,35 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EtanolGasolinaActivity" />
-        <activity android:name=".CustoAbastecimentoActivity" />
-        <activity android:name=".CustoTrajetoActivity" />
-        <activity android:name=".QuilometragemPorLitroActivity" />
-        <activity android:name=".TrocaOleoActivity" />
-        <activity android:name=".RegistrarAbastecimentoActivity" />
-        <activity android:name=".SobreAppActivity" />
-        <activity android:name=".RodizioPneusActivity" />
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".EtanolGasolinaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustoAbastecimentoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustoTrajetoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuilometragemPorLitroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TrocaOleoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegistrarAbastecimentoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SobreAppActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RodizioPneusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +49,7 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver android:name=".VerificarDataTrocaOleoReceiver">

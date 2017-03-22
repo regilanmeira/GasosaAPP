@@ -45,17 +45,25 @@ EditText txtAutonomia,txtDistanciaTrajeto,txtPrecoCombustivel;
             {
                 double autonomia,distancia,preco,custo;
 
-                autonomia = Double.parseDouble(txtAutonomia.getText().toString());
-                distancia = Double.parseDouble(txtDistanciaTrajeto.getText().toString());
-                preco = Double.parseDouble(txtPrecoCombustivel.getText().toString());
+                if (txtAutonomia.getText().toString().equals("") || txtAutonomia.getText().toString().equals("") || txtAutonomia.getText().toString().equals("")) {
 
-                Abastecimento abastecimento = new Abastecimento(preco,autonomia,distancia);
+                    Toast.makeText(getBaseContext(),R.string.msg_preencha_campos,Toast.LENGTH_LONG).show();
 
-                custo = abastecimento.CalcularCustoTrajeto();
+                }
+                else
+                {
+                    autonomia = Double.parseDouble(txtAutonomia.getText().toString());
+                    distancia = Double.parseDouble(txtDistanciaTrajeto.getText().toString());
+                    preco = Double.parseDouble(txtPrecoCombustivel.getText().toString());
 
-                DecimalFormat formatacao = new DecimalFormat("#0.00");
+                    Abastecimento abastecimento = new Abastecimento(preco, autonomia, distancia);
 
-                tvResultado.setText("R$ " + formatacao.format(custo));
+                    custo = abastecimento.CalcularCustoTrajeto();
+
+                    DecimalFormat formatacao = new DecimalFormat("#0.00");
+
+                    tvResultado.setText("R$ " + formatacao.format(custo));
+                }
 
             }
             catch (Exception ex)
